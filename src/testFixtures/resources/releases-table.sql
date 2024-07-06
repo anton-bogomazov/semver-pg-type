@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS releases (
     id          UUID    PRIMARY KEY,
-    version     TEXT    NOT NULL,
+    version     SEMVER  NOT NULL,
     description TEXT    NOT NULL
 );

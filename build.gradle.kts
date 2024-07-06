@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "2.0.0"
     kotlin("plugin.spring") version "2.0.0"
     kotlin("plugin.jpa") version "2.0.0"
+    `java-test-fixtures`
 }
 
 group = "com.abogomazov"
@@ -26,9 +27,9 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql:${Versions.pg}")
     implementation("io.hypersistence:hypersistence-utils-hibernate-63:${Versions.hypersistence}")
 
-    testImplementation("org.springframework.boot:spring-boot-starter-test:${Versions.spring}")
-    testImplementation("org.springframework.boot:spring-boot-testcontainers:${Versions.spring}")
-    testImplementation("org.testcontainers:postgresql:${Versions.pg_testcontainers}")
+    testFixturesImplementation("org.springframework.boot:spring-boot-starter-test:${Versions.spring}")
+    testFixturesImplementation("org.springframework.boot:spring-boot-testcontainers:${Versions.spring}")
+    testFixturesImplementation("org.testcontainers:postgresql:${Versions.pg_testcontainers}")
     testImplementation("io.kotest:kotest-assertions-core-jvm:${Versions.kotest}")
 }
 

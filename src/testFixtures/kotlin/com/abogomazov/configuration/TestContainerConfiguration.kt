@@ -1,4 +1,4 @@
-package com.abogomazov.persistence
+package com.abogomazov.configuration
 
 import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection

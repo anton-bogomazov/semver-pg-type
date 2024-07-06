@@ -1,7 +1,12 @@
 package com.abogomazov.persistence
 
+import com.abogomazov.configuration.TestContainerConfiguration
+import com.abogomazov.types.Semver
+import com.abogomazov.types.asString
+import com.abogomazov.types.parseString
 import io.kotest.matchers.optional.shouldBePresent
 import io.kotest.matchers.shouldBe
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -16,10 +21,15 @@ class ReleasePersistenceTest {
     @Autowired
     private lateinit var sut: ReleaseRepository
 
+    @BeforeEach
+    fun cleanTable() {
+        sut.deleteAll()
+    }
+
     @Test
     fun `release can be persisted`() {
         val e = ReleaseEntity(
-            version = "0.1.0",
+            version = Semver.parseString("0.1.0"),
             description = ReleaseDescription("First release"),
         )
 
@@ -40,7 +50,7 @@ class ReleasePersistenceTest {
         )
         sortedVersions.shuffled().mapIndexed { i, version ->
             ReleaseEntity(
-                version = version,
+                version = Semver.parseString(version),
                 description = ReleaseDescription("Release #$i"),
             )
         }.forEach { sut.save(it) }
@@ -48,7 +58,8 @@ class ReleasePersistenceTest {
         val sortByVersionAscCriteria =
             Sort.by(Sort.Order.asc(ReleaseEntity::version.name))
 
-        val resulVersions = sut.findAll(sortByVersionAscCriteria).map { it.version }
+        val resulVersions = sut.findAll(sortByVersionAscCriteria)
+            .map { it.version.asString() }
 
         resulVersions shouldBe sortedVersions
     }
