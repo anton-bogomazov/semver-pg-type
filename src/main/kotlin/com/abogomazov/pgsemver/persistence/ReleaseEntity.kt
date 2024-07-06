@@ -1,7 +1,7 @@
-package com.abogomazov.persistence
+package com.abogomazov.pgsemver.persistence
 
-import com.abogomazov.postgres.types.SemverType
-import com.abogomazov.types.Semver
+import com.abogomazov.pgsemver.postgres.types.SemverType
+import com.abogomazov.pgsemver.types.Semver
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import jakarta.persistence.Table

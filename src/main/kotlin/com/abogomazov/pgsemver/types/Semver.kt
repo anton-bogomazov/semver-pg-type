@@ -1,4 +1,4 @@
-package com.abogomazov.types
+package com.abogomazov.pgsemver.types
 
 private const val REQUIRES_POSITIVE = "At least one positive version value is required"
 private const val NEGATIVES_NOT_ALLOWED = "Negative version values are not allowed"

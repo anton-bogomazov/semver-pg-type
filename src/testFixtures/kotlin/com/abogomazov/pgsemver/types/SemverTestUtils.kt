@@ -1,6 +1,6 @@
-package com.abogomazov.types
+package com.abogomazov.pgsemver.types
 
-import com.abogomazov.postgres.types.parse
+import com.abogomazov.pgsemver.postgres.types.parse
 
 fun Semver.Companion.parseString(str: String): Semver {
     val tupleStr = "(${str.replace(".", ",")})"

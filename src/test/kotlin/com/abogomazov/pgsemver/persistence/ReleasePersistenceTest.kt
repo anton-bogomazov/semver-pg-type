@@ -1,9 +1,9 @@
-package com.abogomazov.persistence
+package com.abogomazov.pgsemver.persistence
 
-import com.abogomazov.configuration.TestContainerConfiguration
-import com.abogomazov.types.Semver
-import com.abogomazov.types.asString
-import com.abogomazov.types.parseString
+import com.abogomazov.pgsemver.configuration.TestContainerConfiguration
+import com.abogomazov.pgsemver.types.Semver
+import com.abogomazov.pgsemver.types.asString
+import com.abogomazov.pgsemver.types.parseString
 import io.kotest.matchers.optional.shouldBePresent
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.BeforeEach

@@ -1,6 +1,6 @@
-package com.abogomazov.postgres.types
+package com.abogomazov.pgsemver.postgres.types
 
-import com.abogomazov.types.Semver
+import com.abogomazov.pgsemver.types.Semver
 import io.hypersistence.utils.common.ReflectionUtils
 import io.hypersistence.utils.hibernate.type.ImmutableType
 import org.hibernate.engine.spi.SharedSessionContractImplementor

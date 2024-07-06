@@ -1,6 +1,6 @@
-package com.abogomazov.postgres.types
+package com.abogomazov.pgsemver.postgres.types
 
-import com.abogomazov.types.Semver
+import com.abogomazov.pgsemver.types.Semver
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test

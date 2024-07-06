@@ -1,6 +1,6 @@
-package com.abogomazov.postgres.types
+package com.abogomazov.pgsemver.postgres.types
 
-import com.abogomazov.types.Semver
+import com.abogomazov.pgsemver.types.Semver
 
 private val TUPLE_REGEX = """(\d+),(\d+),(\d+)""".toRegex()
 private const val INVALID_FORMAT_ERROR = "Invalid semver string format"

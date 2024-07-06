@@ -1,4 +1,4 @@
-package com.abogomazov.persistence
+package com.abogomazov.pgsemver.persistence
 
 import org.springframework.data.jpa.repository.JpaRepository
 import java.util.UUID

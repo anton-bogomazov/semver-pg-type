@@ -1,4 +1,4 @@
-package com.abogomazov.types
+package com.abogomazov.pgsemver.types
 
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.comparables.shouldBeGreaterThan
