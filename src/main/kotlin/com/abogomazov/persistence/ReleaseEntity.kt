@@ -10,9 +10,8 @@ import java.util.UUID
 data class ReleaseEntity(
     @Id
     val id: UUID = UUID.randomUUID(),
-    val version: Semver,
+    val version: String,
     val description: ReleaseDescription,
 )
 
-@JvmInline value class Semver(private val value: String)
 @JvmInline value class ReleaseDescription(private val value: String)
