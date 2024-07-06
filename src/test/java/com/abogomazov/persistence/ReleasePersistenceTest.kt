@@ -3,13 +3,8 @@ package com.abogomazov.persistence
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.context.TestConfiguration
-import org.springframework.boot.testcontainers.service.connection.ServiceConnection
-import org.springframework.context.annotation.Bean
 import org.springframework.data.domain.Example
 import org.springframework.test.context.ContextConfiguration
-import org.testcontainers.containers.PostgreSQLContainer
-import org.testcontainers.utility.DockerImageName
 
 @SpringBootTest
 @ContextConfiguration(classes = [TestContainerConfiguration::class])
@@ -29,12 +24,4 @@ class ReleasePersistenceTest {
 
         assert(sut.findOne(Example.of(e)).isPresent)
     }
-}
-
-@TestConfiguration(proxyBeanMethods = false)
-class TestContainerConfiguration {
-    @Bean
-    @ServiceConnection
-    fun postgresContainer(): PostgreSQLContainer<*> =
-        PostgreSQLContainer(DockerImageName.parse("postgres"))
 }
