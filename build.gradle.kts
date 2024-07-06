@@ -10,12 +10,21 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.3.1")
-    implementation("org.postgresql:postgresql:42.7.3")
+object Versions {
+    val kotlin = "2.0.0"
+    val spring = "3.3.1"
+    val pg = "42.7.3"
+    val pg_testcontainers = "1.19.8"
+}
 
-    testImplementation("org.testcontainers:postgresql:1.19.8")
-    testImplementation("io.kotest:kotest-assertions-core-jvm:5.9.1")
+dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin}")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:${Versions.spring}")
+    runtimeOnly("org.postgresql:postgresql:${Versions.pg}")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${Versions.spring}")
+    testImplementation("org.springframework.boot:spring-boot-testcontainers:${Versions.spring}")
+    testImplementation("org.testcontainers:postgresql:${Versions.pg_testcontainers}")
 }
 
 tasks.test {
