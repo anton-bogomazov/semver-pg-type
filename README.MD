@@ -14,7 +14,10 @@ Therefore, I turned to a well-known library, [Hypersistence](https://github.com/
 which provides classes like MutableType and ImmutableType, significantly reducing boilerplate code for type implementation and offering a much more pleasant interface.
 One minor drawback I consider in my solution is the unsafe handling of Postgres types, caused by the fact that the Postgres driver is a runtimeOnly dependency.
 
-Description:
+### How to run:
+- ```./gradlew test``` executes test suite. It uses test containers, so Docker is required.
+
+### Description:
 - [Postgres type](./src/testFixtures/resources/semver-type.sql):
 Definition of the type structure and implementation of operations on it.
 
@@ -24,6 +27,6 @@ Mapping of the database type to the domain and vice versa.
 - [Domain type](./src/main/kotlin/com/abogomazov/pgsemver/types/Semver.kt):
 Domain type definition.
 
-References:
+### References:
 - [UserType interface](https://docs.jboss.org/hibernate/orm/5.6/javadocs/org/hibernate/usertype/UserType.html)
 - [Hypersistence](https://github.com/vladmihalcea/hypersistence-utils)
