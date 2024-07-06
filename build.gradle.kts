@@ -17,12 +17,14 @@ object Versions {
     val pg = "42.7.3"
     val pg_testcontainers = "1.19.8"
     val kotest = "5.9.1"
+    val hypersistence = "3.8.1"
 }
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin}")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:${Versions.spring}")
     runtimeOnly("org.postgresql:postgresql:${Versions.pg}")
+    implementation("io.hypersistence:hypersistence-utils-hibernate-63:${Versions.hypersistence}")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test:${Versions.spring}")
     testImplementation("org.springframework.boot:spring-boot-testcontainers:${Versions.spring}")
